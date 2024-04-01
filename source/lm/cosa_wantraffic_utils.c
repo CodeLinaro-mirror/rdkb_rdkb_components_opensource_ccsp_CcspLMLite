@@ -918,7 +918,7 @@ pstDSCPInfo_t InsertClient(pstDSCPInfo_t DscpTree, pDSCP_list_t CliList)
                   } while (resetMemorySlab);
                 }
             }
-        else
+        else if (0xFFFF != CliList->DSCP_Element[DscpTree->Dscp].dscp_value)
         {
             WTC_LOG_INFO("Values are not hashed with dscp as index.");
         }
