@@ -2726,7 +2726,7 @@ static void *Hosts_StatSyncThreadFunc(void *args)
         }
         else
         {
-#if !defined(_PLATFORM_RASPBERRYPI_) && !defined(_PLATFORM_TURRIS_)
+#if !defined(_PLATFORM_RASPBERRYPI_) && !defined(_PLATFORM_TURRIS_) && !defined(_PLATFORM_BANANAPI_R4_)
             if(bridgemode)
             {
                 Send_Eth_Host_Sync_Req(); 
