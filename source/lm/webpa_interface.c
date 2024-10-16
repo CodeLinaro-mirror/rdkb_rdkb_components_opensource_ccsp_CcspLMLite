@@ -49,7 +49,7 @@
 #include <utapi/utapi_util.h>
 #endif
 
-#ifdef _SR300_PRODUCT_REQ_
+#if defined(_SR300_PRODUCT_REQ_) || defined(_RDKB_GLOBAL_PRODUCT_REQ_)
 #include <cosa_wantraffic_api.h>
 extern pstWTCInfo_t WTCinfo;
 #endif
@@ -77,7 +77,7 @@ static int check_ethernet_wan_status();
 #endif
 
 #ifdef WAN_FAILOVER_SUPPORTED
-#ifdef _SR300_PRODUCT_REQ_
+#if defined(_SR300_PRODUCT_REQ_) || defined(_RDKB_GLOBAL_PRODUCT_REQ_)
 rbusHandle_t rbus_handle;
 #else
 static rbusHandle_t rbus_handle;
@@ -623,7 +623,6 @@ static void eventReceiveHandler(
                     if((strstr(newActiveInterface, "WANOE") != NULL) || 
                         (strstr(newActiveInterface, "DSL") != NULL ) ||
                          (strstr(newActiveInterface, "ADSL") != NULL )) 
-                            
                     {
                         CcspTraceInfo(("newActiveInterface is : %s\n", newActiveInterface));
                         if(WTCinfo)

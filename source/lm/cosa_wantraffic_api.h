@@ -108,6 +108,10 @@
 #define TR181_ACTIVE_INTERFACE      "Device.X_RDK_WanManager.InterfaceActiveStatus"
 #define DSL                         DOCSIS
 #endif
+#ifdef _RDKB_GLOBAL_PRODUCT_REQ_
+#define TR181_ACTIVE_INTERFACE      "Device.X_RDK_WanManager.InterfaceActiveStatus"
+#endif
+
 
 #define LMLITE_RBUS_COMPONENT_NAME  "CcspLMLite"
 

@@ -158,7 +158,7 @@ VOID WTC_Init
             WTCinfo->SubscribeRefCount = 0;
             WTCinfo->LanMode = IsBridgeMode();
             WTCinfo->WanMode = GetEthWANIndex();
-            #ifdef _SR300_PRODUCT_REQ_
+            #if defined(_SR300_PRODUCT_REQ_) || defined(_RDKB_GLOBAL_PRODUCT_REQ_)
             if ((INVALID_MODE == WTCinfo->LanMode))
             #else
             if ((INVALID_MODE == WTCinfo->LanMode) || (INVALID_MODE == WTCinfo->WanMode))

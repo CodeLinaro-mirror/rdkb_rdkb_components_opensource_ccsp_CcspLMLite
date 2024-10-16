@@ -80,7 +80,7 @@
 
 #define ETH_WAN_ENABLE_STRING    "eth_wan_enabled"
 //this is to test FORCE MERGE
-#ifdef _SR300_PRODUCT_REQ_
+#if defined(_SR300_PRODUCT_REQ_) || defined(_RDKB_GLOBAL_PRODUCT_REQ_)
 extern rbusHandle_t rbus_handle;
 #endif
 
@@ -120,7 +120,7 @@ CHAR* RemoveSpaces(CHAR *str)
     str[j] = '\0';
     return str;
 }
-#ifdef _SR300_PRODUCT_REQ_
+#if defined(_SR300_PRODUCT_REQ_) || defined(_RDKB_GLOBAL_PRODUCT_REQ_)
 /**********************************************************************
     function:
         GetCurrentActiveInterface
