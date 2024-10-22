@@ -255,6 +255,7 @@ int main(int argc, char* argv[])
         if(!drop_root_priv(&appcaps)){
 	    CcspTraceInfo(("droproot function failed!\n"));
         }
+        clear_caps(&appcaps);
     }
     for (idx = 1; idx < argc; idx++)
     {
@@ -332,7 +333,7 @@ int main(int argc, char* argv[])
     if(ret != 0)
     {
        CcspTraceError(("exit ERROR %s:%d\n", __FUNCTION__, __LINE__));
-       exit(1);
+      exit(1);
     }
 
 #ifdef _COSA_SIM_
@@ -344,7 +345,7 @@ int main(int argc, char* argv[])
     if (err != CCSP_SUCCESS)
     {
         fprintf(stderr, "Cdm_Init: %s\n", Cdm_StrError(err));
-        exit(1);
+       exit(1);
     }
 #ifdef FEATURE_SUPPORT_RDKLOG
     RDK_LOGGER_INIT();
@@ -378,7 +379,7 @@ int main(int argc, char* argv[])
             if(ret != 0)
             {
               CcspTraceError(("exit ERROR %s:%d\n", __FUNCTION__, __LINE__));
-              exit(1);
+             exit(1);
             }
         }
     }
