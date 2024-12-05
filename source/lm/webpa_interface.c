@@ -629,7 +629,11 @@ static void eventReceiveHandler(
                         {
                             pthread_mutex_lock(&WTCinfo->WanTrafficMutexVar);    
                             if((strstr(newActiveInterface, "WANOE")))
+#if  defined (_SCER11BEL_PRODUCT_REQ_)
+                                WTCinfo->WanMode = EWAN - 1;
+#else
                                 WTCinfo->WanMode = EWAN;
+#endif
                             else
                                 WTCinfo->WanMode = DSL;
                             WTCinfo->WTCConfigFlag[WTCinfo->WanMode-1] |= WTC_WANMODE_CHANGE;

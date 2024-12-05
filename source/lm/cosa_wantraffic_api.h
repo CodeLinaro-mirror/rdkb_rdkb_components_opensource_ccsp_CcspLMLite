@@ -93,7 +93,11 @@
 #define BUFLEN_20480                20480
 
 #define UNIT_KB                     1024
+#if defined (_SCER11BEL_PRODUCT_REQ_)
+#define SUPPORTED_WAN_MODES         1
+#else
 #define SUPPORTED_WAN_MODES         2
+#endif
 #define ALL_DSCP_VALUE              "-1"
 #define DEFAULT_THREAD_SLEEP        5
 #define CLIENT_ALLOC_SLAB           10
