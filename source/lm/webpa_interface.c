@@ -42,7 +42,7 @@
 
 #define MAX_PARAMETERNAME_LEN   512
 
-#ifdef _SKY_HUB_COMMON_PRODUCT_REQ_
+#if defined(_SKY_HUB_COMMON_PRODUCT_REQ_) && !defined(_SCER11BEL_PRODUCT_REQ_)
 #include <utctx/utctx.h>
 #include <utctx/utctx_api.h>
 #include <utapi/utapi.h>
@@ -346,7 +346,7 @@ char * getDeviceMac()
 {
     CcspLMLiteConsoleTrace(("RDK_LOG_DEBUG, LMLite %s ENTER\n", __FUNCTION__ ));
 
-#ifdef _SKY_HUB_COMMON_PRODUCT_REQ_
+#if defined(_SKY_HUB_COMMON_PRODUCT_REQ_) && !defined(_SCER11BEL_PRODUCT_REQ_)
     char wanPhyName[32] = {0};
     char out_value[32] = {0};
     char deviceMACVal[32] = {0};
